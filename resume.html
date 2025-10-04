@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ketana Sai Nikethan — Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #00697d, #33278cda, #050505, #09f0a3);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #f9fafb;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .glow-text {
+      background: linear-gradient(90deg, #fef3c7, #a7f3d0, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #fef3c7;
+      border-radius: 50%;
+      animation: sparkle 6s infinite ease-in-out;
+      opacity: 0.8;
+    }
+    @keyframes sparkle {
+      0% { transform: scale(0) translateY(0); opacity: 0; }
+      50% { transform: scale(1.2) translateY(-60px); opacity: 1; }
+      100% { transform: scale(0) translateY(-120px); opacity: 0; }
+    }
+
+    .glow-frame {
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(59,130,246,0.5);
+      animation: pulseGlow 4s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(147,51,234,0.3); }
+      100% { box-shadow: 0 0 25px rgba(255,255,255,0.6), 0 0 50px rgba(59,130,246,0.6); }
+    }
+
+    .glow-btn {
+      transition: all 0.3s ease;
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 20px rgba(255,255,255,0.8);
+      transform: translateY(-3px);
+    }
+    h2{
+        font-family: 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sparkles -->
+  <div id="sparkle-container"></div>
+
+
+  <main class="max-w-5xl mx-auto px-6 pb-20">
+    <!-- Hero -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-6">
+      <div class="flex justify-center">
+        <img src="nikethan.jpg" alt="Ketana Sai Nikethan" 
+             class="w-48 h-48 rounded-full shadow-lg object-cover border-4 border-white glow-frame" />
+      </div>
+      <div>
+        <h2 class="text-5xl font-extrabold glow-text">Ketana Sai Nikethan</h2>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="index.html" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium bg-white/20 text-white glow-btn">Portfolio</a>
+          <a href="#project" class="inline-flex items-center gap-2 border px-4 py-2 text-sm bg-white/20 text-white glow-btn">Project</a>
+          <a href="https://github.com/Nikethan-2005" target="_blank" class="inline-flex items-center gap-2 border px-4 py-2 text-sm bg-white/20 text-white glow-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/nikethan-ketana-050522321" target="_blank" class="inline-flex items-center gap-2 border px-4 py-2 text-sm bg-white/20 text-white glow-btn">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="mt-14 bg-white/10 p-6 rounded-2xl shadow glow-card">
+      <h3 class="text-2xl font-semibold glow-text">Resume</h3>
+      <p class="mt-2">You can view or download my full resume below:</p>
+      <div class="mt-4">
+        <iframe src="Sai Nikethan_Ketana_Junior_Software_Engineer (2).pdf" width="100%" height="600px" class="rounded-lg glow-frame"></iframe>
+      </div>
+      <a href="Sai Nikethan_Ketana_Junior_Software_Engineer (2).pdf" download class="mt-4 inline-block rounded-full bg-emerald-500 text-white px-5 py-2 font-medium glow-btn">Download My Resume</a>
+    </section>
+    <!-- Project Section -->
+    <section id="project" class="mt-14 bg-white/10 p-6 rounded-2xl shadow glow-card">
+      <h3 class="text-2xl font-semibold glow-text">Project</h3>
+      <p class="mt-2">You can view or download my project below:</p>
+      <div class="mt-4">
+        <iframe src="ONLINE BLOOD DONATION NIKETHAN.KETANA.pdf" width="100%" height="600px" class="rounded-lg glow-frame"></iframe>
+      </div>
+      <a href="ONLINE BLOOD DONATION NIKETHAN.KETANA.pdf" download class="mt-4 inline-block box-full bg-blue-500 text-white px-5 py-2 font-medium glow-btn">Download Project</a>
+    </section>
+
+    <footer class="mt-14 text-center text-sm text-gray-200">© <span id="year"></span> Ketana Sai Nikethan.</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const sparkleContainer = document.getElementById('sparkle-container');
+    for (let i = 0; i < 40; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.animationDelay = Math.random() * 6 + 's';
+      sparkleContainer.appendChild(sparkle);
+    }
+  </script>
+</body>
+</html>
